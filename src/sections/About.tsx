@@ -23,7 +23,7 @@ const About = () => {
                     className='w-full sm:h-[276px] h-fit object-contain'>
                     </img>
                     <div>
-                        <p className='grid-headtext'>Hi,I'm Goodness</p>
+                        <p className='grid-headtext'>Hi,I'm Alex</p>
                         <p className='grid-subtext'>
 
                             With 12 months of experience, I have honed my skills in frontend and backend 
@@ -98,7 +98,7 @@ bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                         <div className='copy-container' onClick={handleCopy}>
                             <img src={hasCopied? 'assets/tick.svg': 'assets/copy.svg'} alt='copy'/>
                             <p className='lg:text-xl md:text-xl font-medium text-gray_gradient text-white'>
-                                goodnessadewole22@gmail.com
+                                goodnessadewole17@gmail.com
                             </p>
                         </div>
                         </div>

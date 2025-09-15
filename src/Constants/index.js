@@ -100,7 +100,7 @@ export const myProjects = [
     subdesc:
       'Born from memes, fueled by community chaos, and destined for the moon — Pablocoin is where culture becomes currency..',
     href: 'https://meme-coin-site-7gri.vercel.app/',
-    texture: '/textures/project/demovideo2.mp4',
+    texture: '/textures/project/Demovideo2.mp4',
     logo: '/assets/pabloimage.jpg',
     logoStyle: {
       backgroundColor: '#13202F',

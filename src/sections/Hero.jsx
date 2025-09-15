@@ -5,7 +5,6 @@ import { PerspectiveCamera } from '@react-three/drei';
 import HackerRoom from '../Components/Hackerroom';
 import CanvasLoder from '../Components/CanvasLoder';
 import { calculateSizes } from '../Constants';
-import HeroCamera from '../Components/HeroCamera'
 import Button from '../Components/Button';
 const Hero = () => {
 
@@ -18,8 +17,8 @@ const Hero = () => {
     flex-col relative'>
             <div className='w-full mx-auto flex flex-col
             sm:mt-36 mt-20 c-space gap-3'>
-                <p className='sm:text-3xl text-2xl font-medium text-white text-center font-generalsans'> Hi, I am Goodness  </p>
-                <p className='hero_tag text-gray_gradient'>Building products and brands</p>
+                <p className='sm:text-3xl text-2xl font-medium text-white text-center font-generalsans'> Hi, I am Alex  </p>
+                <p className='hero_tag text-gray_gradient'>Take Your Project To The Moon</p>
             </div>
 
             <div className='w-full h-full absolute inset-0'>
@@ -29,12 +28,12 @@ const Hero = () => {
                 </Suspense>
                 <PerspectiveCamera makeDefault position={[0,0,30]}/>
                  
-                 <HeroCamera isMobile={isMobile}>
+               
                   <HackerRoom 
                   scale={sizes.deskScale}
                   position={sizes.deskPosition}
                    rotation={[0,280,0]}/>
-                  </HeroCamera>
+                
                  <ambientLight intensity={1}/>
                  <directionalLight position={[10 ,10,10]} intensity={0.5}/>
               </Canvas>

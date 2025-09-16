@@ -1,10 +1,46 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState, useRef, useEffect } from 'react';
 import { myProjects } from '../Constants/index';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import { useMediaQuery } from "react-responsive";
 import CanvasLoder from '../Components/CanvasLoder';
 import DemoComputer from '../Components/DemoComputer';
+
+// Component to handle image / video switching
+const ProjectMedia = ({ currentproject }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load(); // reload video on project change
+      videoRef.current.play().catch(() => {}); // try autoplay (needed for iOS)
+    }
+  }, [currentproject.video]);
+
+  if (currentproject.video) {
+    return (
+      <video
+        key={currentproject.video} // force re-render when video changes
+        ref={videoRef}
+        src={currentproject.video}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="w-full h-64 sm:h-96 object-cover rounded-xl"
+      />
+    );
+  }
+
+  return (
+    <img
+      src={currentproject.spotlight}
+      alt="spotlight"
+      className="w-full h-64 sm:h-96 object-cover rounded-xl"
+    />
+  );
+};
 
 const Project = () => {
   const [selectedProjectIndex, setselectedProjectIndex] = useState(0);
@@ -33,13 +69,9 @@ const Project = () => {
       >
         {/* LEFT: Project Info */}
         <div className="flex flex-col gap-5 relative sm:p-10 px-5 shadow-2xl shadow-black-200">
-          {/* Spotlight image */}
+          {/* Spotlight media (image or video) */}
           <div className="absolute top-0 right-0">
-            <img
-              src={currentproject.spotlight}
-              alt="spotlight"
-              className="w-full h-64 sm:h-96 object-cover rounded-xl"
-            />
+            <ProjectMedia currentproject={currentproject} />
           </div>
 
           {/* Logo */}
@@ -127,15 +159,17 @@ const Project = () => {
                 <group
                   scale={isMobile ? 2 : 2}
                   position={isMobile ? [0, -2, 0] : [0, -3, 0]}
-                  rotation={[0, 0.8, -0]}
-                  
+                  rotation={[0, -0.1, -0]}
                 >
                   <DemoComputer texture={currentproject.texture} />
                 </group>
               </Suspense>
             </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false}
-            enableRotate={!isMobile} />
+            <OrbitControls
+              maxPolarAngle={Math.PI / 2}
+              enableZoom={false}
+              enableRotate={!isMobile}
+            />
           </Canvas>
         </div>
       </div>

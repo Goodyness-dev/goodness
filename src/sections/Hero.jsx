@@ -21,24 +21,21 @@ const Hero = () => {
                 <p className='hero_tag text-gray_gradient'>Take Your Project To The Moon</p>
             </div>
 
-            <div className='w-full h-full absolute inset-0'>
-              <Canvas className='w-full h-full'>
-                <Suspense fallback={<CanvasLoder/>}>
+            <div className="flex justify-center items-center p-10 relative">
+  <img 
+    src="/mainimg.jpg" 
+    alt="main-img"
+    className="w-[500px] h-[500px] object-cover rounded-2xl shadow-2xl border border-gray-700/50
+               transition-transform duration-500 hover:scale-105 hover:shadow-purple-500/40"
+  />
 
-                </Suspense>
-                <PerspectiveCamera makeDefault position={[0,0,30]}/>
-                 
-               
-                  <HackerRoom 
-                  scale={sizes.deskScale}
-                  position={sizes.deskPosition}
-                   rotation={[0,280,0]}/>
-                
-                 <ambientLight intensity={1}/>
-                 <directionalLight position={[10 ,10,10]} intensity={0.5}/>
-              </Canvas>
-            </div>
-            <div className='absolute bottom-7 left-0 right-0 w-full
+  {/* Glow effect */}
+  <div className="absolute inset-0 flex justify-center items-center -z-10">
+    <div className="w-[700px] h-[500px] bg-purple-500/20 blur-3xl rounded-full"></div>
+  </div>
+</div>
+
+            <div className=' bottom-7 left-0 right-0 w-full
             z-10 c-space'> 
             <a href='#about' className='w-fit'>
                <Button name="Let's work together"isBeam containerClass="sm:w-fit w-full sm:min-w-96"/>

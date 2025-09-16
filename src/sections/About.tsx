@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Globe from 'react-globe.gl';
 import Button from '../Components/Button'
 import { color } from 'three/tsl';
@@ -12,6 +12,17 @@ const About = () => {
             setHasCopied(false)
         }, 2000)
     }
+    const [isMobile, setIsMobile] = useState(false)
+    useEffect(()=> {
+        const handleResize = ()=> {
+            setIsMobile(window.innerWidth < 768)
+
+        }
+        handleResize()
+
+        window.addEventListener('resize', handleResize)
+        return()=> window.removeEventListener('resize', handleResize)
+    }, [])
   return (
    <section className='c-space my-20 ' id="about">
         <div className='grid xl:grid-cols-3
@@ -47,7 +58,11 @@ const About = () => {
                 <div className='col-span-1 xl:row-span-4'>
                     <div className='grid-container'>
                         <div className='rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center'>
-                            <Globe
+                           { isMobile ? <img src='//unpkg.com/three-globe/example/img/earth-night.jpg'
+                           alt='globe-mobile'
+                          
+                           className='w-[200px]
+                           h-[200px] object-contain'/>: <Globe
                             height={326}
                             width={326}
                             backgroundColor='rgba(0,0,0,0)'
@@ -60,7 +75,7 @@ bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                                 text: "I'm here!",
                                 color: "white",
                                 size: 20,
-                             }]}/>
+                             }]}/> }
                             
                         </div>
                         <div>

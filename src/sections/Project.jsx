@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useRef, useEffect } from 'react';
+import React, { Suspense, useState } from 'react';
 import { myProjects } from '../Constants/index';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
@@ -8,20 +8,10 @@ import DemoComputer from '../Components/DemoComputer';
 
 // Component to handle image / video switching
 const ProjectMedia = ({ currentproject }) => {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load(); // reload video on project change
-      videoRef.current.play().catch(() => {}); // try autoplay (needed for iOS)
-    }
-  }, [currentproject.video]);
-
   if (currentproject.video) {
     return (
       <video
-        key={currentproject.video} // force re-render when video changes
-        ref={videoRef}
+        key={currentproject.video} // 👈 force re-render when video changes
         src={currentproject.video}
         autoPlay
         muted
@@ -35,6 +25,7 @@ const ProjectMedia = ({ currentproject }) => {
 
   return (
     <img
+      key={currentproject.spotlight} // 👈 same trick for images
       src={currentproject.spotlight}
       alt="spotlight"
       className="w-full h-64 sm:h-96 object-cover rounded-xl"

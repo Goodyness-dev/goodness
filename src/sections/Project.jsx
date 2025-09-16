@@ -125,9 +125,9 @@ const Project = () => {
             <Center>
               <Suspense fallback={<CanvasLoder />}>
                 <group
-                  scale={isMobile ? 1.2 : 2}
+                  scale={isMobile ? 2 : 2}
                   position={isMobile ? [0, -2, 0] : [0, -3, 0]}
-                  rotation={[0, -0.1, 0]}
+                  rotation={[0, 0.8, -0]}
                   
                 >
                   <DemoComputer texture={currentproject.texture} />

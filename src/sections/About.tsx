@@ -38,7 +38,7 @@ const About = () => {
                         <p className='grid-subtext'>
 
                             With 12 months of experience, I have honed my skills in frontend and backend 
-                            develpment with a focus on AI integration into websites
+                            develpment with a focus on crypto related websites
                         </p>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                         <div>
                             <p className='grid-headtext'>My passion for Coding</p>
                             <p className='grid-subtext'>I love solving problems
-                                and building things through codo.Coding isn't
+                                and building things through code.Coding isn't
                                 just my profession - it is my passion
                             </p>
                         </div>

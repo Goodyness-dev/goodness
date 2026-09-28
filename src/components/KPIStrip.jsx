@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function KPIStrip() {
   const kpis = [
-    { value: '15+', label: 'Production Sites Deployed', detail: 'Live client platforms & tools' },
+    { value: '35+', label: 'Production Sites Deployed', detail: 'Live client platforms & tools' },
     { value: '0%', label: 'Delivery Commission Bleed', detail: 'Direct-order engines built' },
     { value: '60fps', label: 'Tactile Motion & UI', detail: 'GSAP-tuned smooth performance' },
     { value: '< 1.2s', label: 'Mobile Page Load Speed', detail: 'Zero bundle & asset waste' }

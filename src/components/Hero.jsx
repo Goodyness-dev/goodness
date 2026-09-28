@@ -85,7 +85,7 @@ export default function Hero() {
               <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-white/5 space-y-2">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-zinc-400">Active Deployed Platforms</span>
-                  <span className="text-emerald-400 font-bold">15+ Live</span>
+                  <span className="text-emerald-400 font-bold">35+ Live</span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-zinc-400">Commission Fee Elimination</span>

@@ -18,8 +18,8 @@ export default function ContactSection() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(emailAddress);
+  const handleCopyEmail = async () => {
+    try { await navigator.clipboard.writeText(emailAddress); } catch { setStatus({ type: 'error', text: 'Copy unavailable. Please select the email address to copy it.' }); return; }
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -77,11 +77,11 @@ export default function ContactSection() {
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-            Let's build something exceptional together.
+            Have an idea? Let's make it real.
           </h2>
 
           <p className="text-base text-zinc-400 leading-relaxed">
-            Whether you need a high-conversion commercial platform, an automated direct-ordering engine, or a full-stack Web3 application, I am available for immediate engagement.
+            Tell me what you are building, what matters most, and where you want to go. Let's work out the next step.
           </p>
 
           <div className="pt-2 space-y-4">
@@ -118,12 +118,12 @@ export default function ContactSection() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <label className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
+                <label htmlFor="contact-name" className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
                   Your Name *
                 </label>
                 <input
                   type="text"
-                  name="name"
+                  id="contact-name" aria-label="Your name" name="name"
                   value={form.name}
                   onChange={handleChange}
                   required
@@ -133,12 +133,12 @@ export default function ContactSection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
+                <label htmlFor="contact-email" className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
                   Email Address *
                 </label>
                 <input
                   type="email"
-                  name="email"
+                  id="contact-email" aria-label="Email address" name="email"
                   value={form.email}
                   onChange={handleChange}
                   required
@@ -149,11 +149,11 @@ export default function ContactSection() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
+              <label htmlFor="contact-category" className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
                 Project Category
               </label>
               <select
-                name="projectType"
+                id="contact-category" aria-label="Project category" name="projectType"
                 value={form.projectType}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-white/10 focus:border-blue-500 focus:outline-none text-sm text-white transition-colors"
@@ -167,11 +167,11 @@ export default function ContactSection() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
+              <label htmlFor="contact-message" className="text-xs font-mono text-zinc-300 uppercase tracking-wider block">
                 Project Details & Timeline *
               </label>
               <textarea
-                name="message"
+                id="contact-message" aria-label="Project details and timeline" name="message"
                 value={form.message}
                 onChange={handleChange}
                 required
@@ -183,7 +183,7 @@ export default function ContactSection() {
 
             {status.text && (
               <div
-                className={`p-4 rounded-xl text-xs sm:text-sm font-medium ${
+                role="status" aria-live="polite" className={`p-4 rounded-xl text-xs sm:text-sm font-medium ${
                   status.type === 'success'
                     ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
                     : 'bg-red-500/10 text-red-400 border border-red-500/30'
@@ -221,3 +221,6 @@ export default function ContactSection() {
     </section>
   );
 }
+
+
+

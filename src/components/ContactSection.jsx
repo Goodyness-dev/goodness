@@ -73,15 +73,15 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400">
-            <span>04 / LET'S WORK TOGETHER</span>
+            <span>03 / YOUR TURN</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-            Let’s fix the gaps.
+            Tell us what you have in mind.
           </h2>
 
           <p className="text-base text-zinc-400 leading-relaxed">
-            Hard to find online? Losing track of enquiries? Tell us where things are getting stuck. We will help you work out the website and tools your business actually needs.
+            A first website, a better one, or a way to stop losing track of customers. Tell us a little about your business and where you want to take it.
           </p>
 
           <div className="pt-2 space-y-4">
@@ -201,7 +201,7 @@ export default function ContactSection() {
                 </>
               ) : (
                 <>
-                  <span>Tell us about your project</span>
+                  <span>Send your project brief</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
@@ -214,6 +214,7 @@ export default function ContactSection() {
     </section>
   );
 }
+
 
 
 

@@ -39,7 +39,7 @@ export default function ContactSection() {
           user_id: 'cv2I_dwTk6foaIr_C',
           template_params: {
             name: form.name,
-            to_name: 'Goodness Adewole',
+            to_name: 'Pilogram',
             email: form.email,
             to_email: 'adewolegoodness22@gmail.com',
             project_type: form.projectType,
@@ -51,7 +51,7 @@ export default function ContactSection() {
       if (response.ok) {
         setStatus({
           type: 'success',
-          text: 'Thank you! Your message has been sent successfully. I will get back to you within 24 hours.'
+          text: 'Thank you! Your message has been sent successfully. We will be in touch to discuss your project.'
         });
         setForm({ name: '', email: '', projectType: 'Client Platform', message: '' });
       } else {
@@ -73,15 +73,15 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400">
-            <span>GET IN TOUCH</span>
+            <span>04 / LET'S WORK TOGETHER</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-            Have an idea? Let's make it real.
+            Let’s fix the gaps.
           </h2>
 
           <p className="text-base text-zinc-400 leading-relaxed">
-            Tell me what you are building, what matters most, and where you want to go. Let's work out the next step.
+            Hard to find online? Losing track of enquiries? Tell us where things are getting stuck. We will help you work out the website and tools your business actually needs.
           </p>
 
           <div className="pt-2 space-y-4">
@@ -100,13 +100,6 @@ export default function ContactSection() {
               >
                 {copied ? 'Copied!' : 'Copy'}
               </button>
-            </div>
-
-            <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-xs font-mono text-emerald-300">
-                Current response time: &lt; 4 hours
-              </span>
             </div>
           </div>
         </div>
@@ -158,11 +151,11 @@ export default function ContactSection() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-white/10 focus:border-blue-500 focus:outline-none text-sm text-white transition-colors"
               >
-                <option value="Client Platform">Commercial / Client Platform (Web & Mobile)</option>
-                <option value="Direct Ordering">0% Commission Direct-Ordering Engine</option>
-                <option value="Web3 & FinTech">Web3 / Ethereum / FinTech dApp</option>
-                <option value="Full-Stack Engineering">Full-Stack Contract / Custom Microservices</option>
-                <option value="Other">Other Strategic Opportunity</option>
+                <option value="Client Platform">Business website</option>
+                <option value="Landing Page">Landing page</option>
+                <option value="Website Redesign">Website redesign</option>
+                <option value="Website and Dashboard">Website + admin dashboard</option>
+                <option value="Other">Something else</option>
               </select>
             </div>
 
@@ -208,7 +201,7 @@ export default function ContactSection() {
                 </>
               ) : (
                 <>
-                  <span>Send Project Inquiry</span>
+                  <span>Tell us about your project</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
@@ -221,6 +214,8 @@ export default function ContactSection() {
     </section>
   );
 }
+
+
 
 
 

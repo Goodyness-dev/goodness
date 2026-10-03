@@ -1,0 +1,16 @@
+.orb-scene{position:relative;height:410px;min-width:0;isolation:isolate;background:radial-gradient(ellipse at center,#8ac74008,transparent 68%)}
+.orb-control{display:block;position:absolute;inset:0;width:100%;height:100%;border:0;background:none;padding:0;border-radius:50%;touch-action:pan-y}
+.orb-control canvas{display:block;width:100%;height:100%;pointer-events:none}
+.orb-control:focus-visible{outline:1px solid #c2f97088;outline-offset:-30px}
+.orb-monogram{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;font-size:58px;letter-spacing:-5px;color:#edffe0;text-shadow:0 0 28px #c2f97044;pointer-events:none;transition:transform .5s,text-shadow .5s}
+.orb-monogram>span{color:var(--lime)}
+.orb-control:hover .orb-monogram,.orb-control:focus-visible .orb-monogram{transform:scale(1.08);text-shadow:0 0 35px #c2f970aa}
+.orb-control:active .orb-monogram{transform:scale(.92)}
+.orb-caption{position:absolute;top:14px;left:24px;font:8px monospace;letter-spacing:1.2px;color:#89967b;pointer-events:none}
+.orb-tag{position:absolute;font:9px monospace;letter-spacing:1.4px;color:#c4d9af;padding:7px 10px;border:1px solid #b3db752b;background:#131b10b8;border-radius:20px;pointer-events:none;animation:orb-label-float 6s ease-in-out infinite}
+.orb-design{left:4%;top:30%}.orb-engineer{right:0;top:56%;animation-delay:-2s}.orb-ship{left:29%;bottom:17%;animation-delay:-4s}
+.orb-footer{position:absolute;bottom:13px;left:24px;right:12px;display:flex;justify-content:space-between;gap:12px;font:7px monospace;letter-spacing:.8px;color:#8c9b7d;pointer-events:none}
+@keyframes orb-label-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(max-width:1000px){.orb-scene{height:350px}.orb-footer{font-size:6px;left:12px;right:4px}.orb-caption{left:12px;font-size:7px}.orb-tag{font-size:8px;padding:6px 8px}}
+@media(max-width:680px){.orb-scene{height:320px;margin:24px auto 10px;max-width:430px}.orb-caption{top:8px}.orb-monogram{font-size:48px}.orb-footer{bottom:5px;font-size:6px}.orb-design{left:3%;top:28%}.orb-engineer{right:1%}}
+@media(prefers-reduced-motion:reduce){.orb-tag{animation:none}.orb-monogram{transition:none}.orb-control:hover .orb-monogram,.orb-control:focus-visible .orb-monogram,.orb-control:active .orb-monogram{transform:none}}

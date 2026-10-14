@@ -39,7 +39,7 @@ export default function ContactSection() {
           user_id: 'cv2I_dwTk6foaIr_C',
           template_params: {
             name: form.name,
-            to_name: 'Pilogram',
+            to_name: 'Goodness',
             email: form.email,
             to_email: 'adewolegoodness22@gmail.com',
             project_type: form.projectType,
@@ -51,7 +51,7 @@ export default function ContactSection() {
       if (response.ok) {
         setStatus({
           type: 'success',
-          text: 'Thank you! Your message has been sent successfully. We will be in touch to discuss your project.'
+          text: 'Thank you! Your message has been sent successfully. I will be in touch to discuss your project.'
         });
         setForm({ name: '', email: '', projectType: 'Client Platform', message: '' });
       } else {
@@ -73,15 +73,15 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400">
-            <span>03 / YOUR TURN</span>
+            <span>04 / SAY HELLO</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-            Tell us what you have in mind.
+            Let’s make something good.
           </h2>
 
           <p className="text-base text-zinc-400 leading-relaxed">
-            A first website, a better one, or a way to stop losing track of customers. Tell us a little about your business and where you want to take it.
+            A first website, a better one, or a way to stop losing track of customers. Tell me a little about your business and where you want to take it.
           </p>
 
           <div className="pt-2 space-y-4">

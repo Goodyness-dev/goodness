@@ -73,11 +73,11 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400">
-            <span>03 / YOUR TURN</span>
+            <span>04 / SAY HELLO</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-            Tell me what you have in mind.
+            Let’s make something good.
           </h2>
 
           <p className="text-base text-zinc-400 leading-relaxed">
